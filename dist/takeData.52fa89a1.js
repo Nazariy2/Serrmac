@@ -6297,11 +6297,11 @@ var _addPost = require("./addPost");
 var form = document.querySelector(".form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  var title = form.elements.title.value;
+  var Nome = form.elements.title.value;
   var author = form.elements.author.value;
   var mainContent = form.elements.mainContent.value;
   var postData = {
-    title: title,
+    Nome: Nome,
     author: author,
     text: mainContent
   };
@@ -6332,7 +6332,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51531" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54463" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
