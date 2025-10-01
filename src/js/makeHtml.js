@@ -5,8 +5,8 @@ export function makehtml(data) {
     .map((item) => {
       return `
         <li class="list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary">
-          <h3 class="fw-bold">${item.title}</h3>
-          <p class="mb-1"><span class="text-info">Author:</span> ${item.author}</p>
+          <h3 class="fw-bold">${item.Nome_Cognome}</h3>
+          <p class="mb-1"><span class="text-info">Modello Macchina:</span> ${item.author}</p>
           <p class="mb-1"><span class="text-info">Date:</span> ${item.date}</p>
           <p class="mb-3">${item.article.text}</p>
           <div class="d-flex gap-2">

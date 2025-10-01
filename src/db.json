@@ -1,13 +1,19 @@
 {
   "blogs": [
     {
-      "id": "29d9",
-      "Nome": "AAAAAAAAAAAEEEEEEEEEEE",
-      "author": "",
-      "text": "aaaaaaaaaaaaa",
-      "date": "2025-09-30T14:38:31.461Z",
+      "id": "83fc",
+      "Nome_Cognome": "Stefano BInachi",
+      "Nome_Rivenditore": "aaaaaaaaaaaaaaaaa",
+      "Modello_Macchina": "aaaaaaaaaaaaa",
+      "Matricola": "aaaaaaaaaaaaaaaaa",
+      "Anno_di_Produzione": "111111-11-11",
+      "Data_Inserimento": "1111-11-11",
+      "Data_di_Intervento": "111111-11-11",
+      "Nome_Responsabile": "aaaaaaaaaaaaaa",
+      "text": "aaaaaaaaaaa",
+      "date": "2025-10-01T14:23:44.456Z",
       "article": {
-        "text": "aaaaaaaaaaaaa"
+        "text": "aaaaaaaaaaa"
       }
     }
   ]
