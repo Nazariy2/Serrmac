@@ -6185,7 +6185,7 @@ exports.makehtml = makehtml;
 var blogList = document.querySelector(".blogList");
 function makehtml(data) {
   var markup = data.map(function (item) {
-    return "\n        <li class=\"list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary\">\n          <h3 class=\"fw-bold\">".concat(item.Nome_Cognome, "</h3>\n          <p class=\"mb-1\"><span class=\"text-info\">Modello Macchina:</span> ").concat(item.author, "</p>\n          <p class=\"mb-1\"><span class=\"text-info\">Date:</span> ").concat(item.date, "</p>\n          <p class=\"mb-3\">").concat(item.article.text, "</p>\n          <div class=\"d-flex gap-2\">\n            <button class=\"btn btn-sm btn-outline-danger delete\" id=\"").concat(item.id, "\">Delete</button>\n            <button class=\"btn btn-sm btn-outline-warning update\" id=\"").concat(item.id, "\">Update</button>\n          </div>\n        </li>\n      ");
+    return "\n        <li class=\"list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary\">\n          <h3 class=\"fw-bold\">".concat(item.Nome_Cognome, "</h3>\n          <p class=\"mb-1\"><span class=\"text-info\">Modello Macchina:</span> ").concat(item.Modello_Macchina, "</p>\n          <p class=\"mb-1\"><span class=\"text-info\">Date:</span> ").concat(item.date, "</p>\n          <p class=\"mb-3\">").concat(item.article.text, "</p>\n          <div class=\"d-flex gap-2\">\n            <button class=\"btn btn-sm btn-outline-danger delete\" id=\"").concat(item.id, "\">Delete</button>\n            <button class=\"btn btn-sm btn-outline-warning update\" id=\"").concat(item.id, "\">Update</button>\n          </div>\n        </li>\n      ");
   }).join(" ");
   blogList.innerHTML = markup;
   return markup;

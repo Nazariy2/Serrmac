@@ -1,19 +1,35 @@
 {
   "blogs": [
     {
-      "id": "83fc",
-      "Nome_Cognome": "Stefano BInachi",
+      "id": "f3b7",
+      "Nome_Cognome": "aaaaaaaaaa",
       "Nome_Rivenditore": "aaaaaaaaaaaaaaaaa",
-      "Modello_Macchina": "aaaaaaaaaaaaa",
-      "Matricola": "aaaaaaaaaaaaaaaaa",
+      "Modello_Macchina": "aaaaaaaaaaaaaaa",
+      "Matricola": "aaaaaaaaaaaaaaaaaa",
       "Anno_di_Produzione": "111111-11-11",
-      "Data_Inserimento": "1111-11-11",
+      "Data_Inserimento": "111111-11-11",
       "Data_di_Intervento": "111111-11-11",
-      "Nome_Responsabile": "aaaaaaaaaaaaaa",
-      "text": "aaaaaaaaaaa",
-      "date": "2025-10-01T14:23:44.456Z",
+      "Nome_Responsabile": "aaaaaaaaaaaaaaaaaaaaaaa",
+      "text": "aaaaaaaaaaaaaaaaa",
+      "date": "2025-10-01T14:31:56.224Z",
       "article": {
-        "text": "aaaaaaaaaaa"
+        "text": "aaaaaaaaaaaaaaaaa"
+      }
+    },
+    {
+      "id": "2cb4",
+      "Nome_Cognome": "Stefano Rossi",
+      "Nome_Rivenditore": "Valerio Bianchi",
+      "Modello_Macchina": "Trapano",
+      "Matricola": "29395949",
+      "Anno_di_Produzione": "111111-11-11",
+      "Data_Inserimento": "111111-11-11",
+      "Data_di_Intervento": "111111-11-11",
+      "Nome_Responsabile": "MAtei",
+      "text": "non va piu ",
+      "date": "2025-10-01T14:32:49.660Z",
+      "article": {
+        "text": "non va piu "
       }
     }
   ]
