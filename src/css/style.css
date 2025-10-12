@@ -58,23 +58,37 @@ nav {
 .hero-text {
 }
 
-/* === MODALE GENERALE === */
+/* Blocca lo scroll del body quando la modale è attiva */
+body:has(.modal[style*="display: flex"]) {
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* Modale nascosta di default */
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: none; /* di base è nascosta */
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7); /* sfondo scuro trasparente */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999;
-  backdrop-filter: blur(3px); /* effetto vetro */
-  transition: opacity 0.3s ease-in-out;
+  backdrop-filter: blur(3px);
 }
 
-/* === CONTENUTO DELLA MODALE === */
+/* Quando la modale è aperta */
+.modal.show {
+  display: flex;
+}
+
+/* Contenuto della modale */
 .modal-content {
   background-color: #1e1e1e;
   color: #f1f1f1;
@@ -82,36 +96,13 @@ nav {
   padding: 2rem;
   width: 90%;
   max-width: 700px;
+  max-height: 90vh; /* evita che esca dallo schermo */
+  overflow-y: auto; /* scroll solo interno */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
-/* Quando la modale è visibile */
-.modal.show .modal-content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* === TESTO === */
-.modal-content h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0dcaf0; /* azzurrino Bootstrap */
-}
-
-.modal-content p {
-  margin-bottom: 0.6rem;
-  line-height: 1.4;
-}
-
-.modal-content strong {
-  color: #ffc107; /* giallo Bootstrap */
-}
-
-/* === BOTTONE DI CHIUSURA === */
+/* Bottone di chiusura */
 .close {
   position: absolute;
   top: 1rem;

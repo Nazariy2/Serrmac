@@ -6222,7 +6222,7 @@ var modalResponsabile = document.getElementById("modalResponsabile");
 var modalText = document.getElementById("modalText");
 function makehtml(data) {
   var markup = data.map(function (item) {
-    return "\n        <li class=\"list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary\">\n          <h3 class=\"fw-bold\">".concat(item.Nome_Cognome, "</h3>\n          <p class=\"mb-1\"><span class=\"text-info\">Modello Macchina:</span> ").concat(item.Modello_Macchina, "</p>\n          <p class=\"mb-1\"><span class=\"text-info\">Data inserimento:</span> ").concat(item.Data_Inserimento, "</p>\n          <p class=\"text-truncate\" style=\"max-width: 400px;\">").concat(item.article.text, "</p>\n          <div class=\"d-flex gap-2\">\n            <button class=\"btn btn-sm btn-outline-danger delete\" id=\"").concat(item.id, "\">Delete</button>\n            <button class=\"btn btn-sm btn-outline-info view\" data-id=\"").concat(item.id, "\">Vedi tutto</button>\n          </div>\n        </li>\n      ");
+    return "\n        <li class=\"list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary\">\n          <h3 class=\"fw-bold\">".concat(item.Nome_Cognome, "</h3>\n          <p class=\"mb-1\"><span class=\"text-info\">Modello Macchina:</span> ").concat(item.Modello_Macchina, "</p>\n          <p class=\"mb-1\"><span class=\"text-info\">Data inserimento:</span> ").concat(item.Data_Inserimento, "</p>\n          <p class=\"text-truncate\" style=\"max-width: 400px;\"><span class=\"text-info\">Descrizione problema o codice richiesto:</span> ").concat(item.article.text, "</p>\n          <div class=\"d-flex gap-2\">\n            <button class=\"btn btn-sm btn-outline-danger delete\" id=\"").concat(item.id, "\">Delete</button>\n            <button class=\"btn btn-sm btn-outline-info view\" data-id=\"").concat(item.id, "\">Vedi tutto</button>\n          </div>\n        </li>\n      ");
   }).join("");
   blogList.innerHTML = markup;
 
@@ -6235,21 +6235,22 @@ function makehtml(data) {
         return i.id == id;
       });
       if (selectedItem) {
-        var _selectedItem$article;
         // Riempi i campi della modale
         modalNomeCognome.textContent = selectedItem.Nome_Cognome || "-";
         modalNomeRivenditore.textContent = selectedItem.Nome_Rivenditore || "-";
         modalModel.textContent = selectedItem.Modello_Macchina || "-";
-        modalMatricolaMacchina.textContent = selectedItem.Matricola_Macchina || "-";
-        modalAnnoProduziuone.textContent = selectedItem.Anno_Produzione || "-";
+        modalMatricolaMacchina.textContent = selectedItem.Matricola || "-";
+        modalAnnoProduziuone.textContent = selectedItem.Anno_di_Produzione || "-";
         modalDataInserimento.textContent = selectedItem.Data_Inserimento || "-";
-        modalProblema.textContent = selectedItem.Problema || "-";
-        modalIntervento.textContent = selectedItem.Data_Intervento || "-";
-        modalResponsabile.textContent = selectedItem.Responsabile || "-";
-        modalText.textContent = ((_selectedItem$article = selectedItem.article) === null || _selectedItem$article === void 0 ? void 0 : _selectedItem$article.text) || "-";
+        // modalProblema.textContent = selectedItem.Problema || "-";
+        modalIntervento.textContent = selectedItem.Data_di_Intervento || "-";
+        modalResponsabile.textContent = selectedItem.Nome_Responsabile || "-";
+        modalText.textContent = selectedItem.article.text;
+        mainContent || "-";
 
         // Mostra la modale
         modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
       }
     });
   });
@@ -6260,6 +6261,7 @@ function makehtml(data) {
   });
   modal.addEventListener("click", function (e) {
     if (e.target === modal) modal.style.display = "none";
+    document.body.style.overflow = "auto";
   });
   return markup;
 }
@@ -6337,7 +6339,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62800" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55566" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
