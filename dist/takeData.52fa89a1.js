@@ -6176,6 +6176,12 @@ exports.CanceledError = CanceledError;
 exports.AxiosError = AxiosError;
 exports.Axios = Axios;
 },{"./lib/axios.js":"node_modules/axios/lib/axios.js"}],"src/js/makeHtml.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.makehtml = makehtml;
 // const blogList = document.querySelector(".blogList");
 
 // export function makehtml(data) {
@@ -6198,6 +6204,65 @@ exports.Axios = Axios;
 //   blogList.innerHTML = markup;
 //   return markup;
 // }
+
+var blogList = document.querySelector(".blogList");
+var modal = document.getElementById("infoModal");
+var closeModal = document.querySelector(".close");
+
+// elementi della modale
+var modalNomeCognome = document.getElementById("modalNomeCognome");
+var modalNomeRivenditore = document.getElementById("modalNomeRivenditore");
+var modalModel = document.getElementById("modalModel");
+var modalMatricolaMacchina = document.getElementById("modalMatricolaMacchina");
+var modalAnnoProduziuone = document.getElementById("modalAnnoProduziuone");
+var modalDataInserimento = document.getElementById("modalDataInserimento");
+var modalProblema = document.getElementById("modalProblema");
+var modalIntervento = document.getElementById("modalIntervento");
+var modalResponsabile = document.getElementById("modalResponsabile");
+var modalText = document.getElementById("modalText");
+function makehtml(data) {
+  var markup = data.map(function (item) {
+    return "\n        <li class=\"list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary\">\n          <h3 class=\"fw-bold\">".concat(item.Nome_Cognome, "</h3>\n          <p class=\"mb-1\"><span class=\"text-info\">Modello Macchina:</span> ").concat(item.Modello_Macchina, "</p>\n          <p class=\"mb-1\"><span class=\"text-info\">Data inserimento:</span> ").concat(item.Data_Inserimento, "</p>\n          <p class=\"text-truncate\" style=\"max-width: 400px;\">").concat(item.article.text, "</p>\n          <div class=\"d-flex gap-2\">\n            <button class=\"btn btn-sm btn-outline-danger delete\" id=\"").concat(item.id, "\">Delete</button>\n            <button class=\"btn btn-sm btn-outline-info view\" data-id=\"").concat(item.id, "\">Vedi tutto</button>\n          </div>\n        </li>\n      ");
+  }).join("");
+  blogList.innerHTML = markup;
+
+  // aggiungo i listener ai bottoni "Vedi tutto"
+  var viewButtons = blogList.querySelectorAll(".view");
+  viewButtons.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      var id = e.target.dataset.id;
+      var selectedItem = data.find(function (i) {
+        return i.id == id;
+      });
+      if (selectedItem) {
+        var _selectedItem$article;
+        // Riempi i campi della modale
+        modalNomeCognome.textContent = selectedItem.Nome_Cognome || "-";
+        modalNomeRivenditore.textContent = selectedItem.Nome_Rivenditore || "-";
+        modalModel.textContent = selectedItem.Modello_Macchina || "-";
+        modalMatricolaMacchina.textContent = selectedItem.Matricola_Macchina || "-";
+        modalAnnoProduziuone.textContent = selectedItem.Anno_Produzione || "-";
+        modalDataInserimento.textContent = selectedItem.Data_Inserimento || "-";
+        modalProblema.textContent = selectedItem.Problema || "-";
+        modalIntervento.textContent = selectedItem.Data_Intervento || "-";
+        modalResponsabile.textContent = selectedItem.Responsabile || "-";
+        modalText.textContent = ((_selectedItem$article = selectedItem.article) === null || _selectedItem$article === void 0 ? void 0 : _selectedItem$article.text) || "-";
+
+        // Mostra la modale
+        modal.style.display = "flex";
+      }
+    });
+  });
+
+  // Chiudi la modale cliccando sulla X o fuori dal contenuto
+  closeModal.addEventListener("click", function () {
+    return modal.style.display = "none";
+  });
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) modal.style.display = "none";
+  });
+  return markup;
+}
 },{}],"src/js/getBlogs.js":[function(require,module,exports) {
 "use strict";
 
@@ -6352,7 +6417,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52152" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62800" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
