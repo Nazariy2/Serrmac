@@ -6176,20 +6176,28 @@ exports.CanceledError = CanceledError;
 exports.AxiosError = AxiosError;
 exports.Axios = Axios;
 },{"./lib/axios.js":"node_modules/axios/lib/axios.js"}],"src/js/makeHtml.js":[function(require,module,exports) {
-"use strict";
+// const blogList = document.querySelector(".blogList");
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.makehtml = makehtml;
-var blogList = document.querySelector(".blogList");
-function makehtml(data) {
-  var markup = data.map(function (item) {
-    return "\n        <li class=\"list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary\">\n          <h3 class=\"fw-bold\">".concat(item.Nome_Cognome, "</h3>\n          <p class=\"mb-1\"><span class=\"text-info\">Modello Macchina:</span> ").concat(item.Modello_Macchina, "</p>\n          <p class=\"mb-1\"><span class=\"text-info\">Date:</span> ").concat(item.date, "</p>\n          <p class=\"mb-3\">").concat(item.article.text, "</p>\n          <div class=\"d-flex gap-2\">\n            <button class=\"btn btn-sm btn-outline-danger delete\" id=\"").concat(item.id, "\">Delete</button>\n            <button class=\"btn btn-sm btn-outline-warning update\" id=\"").concat(item.id, "\">Update</button>\n          </div>\n        </li>\n      ");
-  }).join(" ");
-  blogList.innerHTML = markup;
-  return markup;
-}
+// export function makehtml(data) {
+//   const markup = data
+//     .map((item) => {
+//       return `
+//         <li class="list-group-item bg-dark text-white mb-3 p-3 rounded shadow-sm border border-secondary">
+//           <h3 class="fw-bold">${item.Nome_Cognome}</h3>
+//           <p class="mb-1"><span class="text-info">Modello Macchina:</span> ${item.Modello_Macchina}</p>
+//           <p class="mb-1"><span class="text-info">Date:</span> ${item.date}</p>
+//           <p class="mb-3">${item.article.text}</p>
+//           <div class="d-flex gap-2">
+//             <button class="btn btn-sm btn-outline-danger delete" id="${item.id}">Delete</button>
+//           </div>
+//         </li>
+//       `;
+//     })
+//     .join(" ");
+
+//   blogList.innerHTML = markup;
+//   return markup;
+// }
 },{}],"src/js/getBlogs.js":[function(require,module,exports) {
 "use strict";
 
@@ -6361,7 +6369,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56452" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52152" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

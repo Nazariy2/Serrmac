@@ -23,7 +23,9 @@
     <main>
       <form class="form bg-dark p-4 rounded mb-4" id="createForm">
         <div class="mb-3">
-          <label for="Nome_Cognome" class="form-label text-white">Nome  Cognome</label>
+          <label for="Nome_Cognome" class="form-label text-white"
+            >Nome Cognome</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="title"
@@ -33,7 +35,9 @@
           />
         </div>
         <div class="mb-3">
-          <label for="author" class="form-label text-white">Nome rivenditore</label>
+          <label for="author" class="form-label text-white"
+            >Nome rivenditore</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="author"
@@ -42,7 +46,7 @@
             required
           />
         </div>
-         <div class="mb-3">
+        <div class="mb-3">
           <label for="Modello" class="form-label text-white">Modello</label>
           <input
             class="form-control bg-dark text-white"
@@ -52,8 +56,10 @@
             required
           />
         </div>
-         <div class="mb-3">
-          <label for="Matricola" class="form-label text-white">Matricola macchina</label>
+        <div class="mb-3">
+          <label for="Matricola" class="form-label text-white"
+            >Matricola macchina</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="Matricola"
@@ -63,7 +69,9 @@
           />
         </div>
         <div class="mb-3">
-          <label for="Anno" class="form-label text-white"> Anno di produzione</label>
+          <label for="Anno" class="form-label text-white">
+            Anno di produzione</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="Anno"
@@ -73,7 +81,9 @@
           />
         </div>
         <div class="mb-3">
-          <label for="inserimento" class="form-label text-white">Data inserimento</label>
+          <label for="inserimento" class="form-label text-white"
+            >Data inserimento</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="inserimento"
@@ -82,8 +92,10 @@
             required
           />
         </div>
-         <div class="mb-3">
-          <label for="mainContent" class="form-label text-white">descrizione problema o codice richiesto</label>
+        <div class="mb-3">
+          <label for="mainContent" class="form-label text-white"
+            >descrizione problema o codice richiesto</label
+          >
           <textarea
             class="form-control bg-dark text-white"
             id="mainContent"
@@ -92,8 +104,10 @@
             required
           ></textarea>
         </div>
-         <div class="mb-3">
-          <label for="intervento" class="form-label text-white"> data prevista di intervento o pronto merce</label>
+        <div class="mb-3">
+          <label for="intervento" class="form-label text-white">
+            data prevista di intervento o pronto merce</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="intervento"
@@ -103,7 +117,9 @@
           />
         </div>
         <div class="mb-3">
-          <label for="responsabile" class="form-label text-white">  nome responsabile</label>
+          <label for="responsabile" class="form-label text-white">
+            nome responsabile</label
+          >
           <input
             class="form-control bg-dark text-white"
             id="responsabile"
@@ -115,20 +131,25 @@
         <button type="submit" class="btn btn-outline-light">Publish</button>
       </form>
       <!-- Blog Posts List -->
-        <ul class="list-group blogList mb-5"></ul>
-
-        <!-- Update Post Form (initially hidden) -->
-        <form class="update bg-dark p-4 rounded mb-5 d-none">
-          <label for="mainContent" class="text-white form-label"
-            >Edit Content</label
-          >
-          <input
-            class="form_input form-control mb-2 bg-dark text-white"
-            id="mainContent"
-            type="text"
-          />
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+      <ul class="list-group blogList mb-5"></ul>
+      <!-- Modal -->
+      <div id="infoModal" class="modal" style="display: none">
+        <div class="modal-content bg-dark text-white p-4 rounded shadow-lg">
+          <span class="close">&times;</span>
+          <h3 id="modalName"></h3>
+          <p><strong>Nome Cognome:</strong> <span id="modalNomeCognome"></span></p>
+          <p><strong>Nome rivenditore:</strong> <span id="modalNomeRivenditore"></span></p>
+          <p><strong>Modello:</strong> <span id="modalModel"></span></p>
+          <p><strong>Matricola macchina:</strong> <span id="modalMatricolaMacchina"></span></p>
+          <p><strong>Anno di produzione:</strong> <span id="modalAnnoProduziuone"></span></p>
+          <p><strong>Data inserimento:</strong> <span id="modalDataInserimento"></span></p>
+          <p><strong>Descrizione problema o codice richiesto:</strong> <span id="modalProblema"></span></p>
+          <p><strong>Data prevista di intervento o pronto merce:</strong> <span id="modalIntervento"></span></p>
+          <p><strong>Nome responsabile:</strong> <span id="modalResponsabile"></span></p>
+          <p><strong>Testo:</strong></p>
+          <p id="modalText"></p>
+        </div>
+      </div>
     </main>
     <footer class="header"></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
