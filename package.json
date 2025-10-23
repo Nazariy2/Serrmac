@@ -5,6 +5,7 @@
   "scripts": {
     "start": "parcel index.html",
     "server": "json-server --watch src/db.json --port 3000"
+    
   },
   "keywords": [],
   "author": "",
