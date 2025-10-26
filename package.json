@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "server": "json-server --watch src/db.json --port $PORT"
+    "server": "npx json-server --watch src/db.json --port $PORT"
   },
   "keywords": [],
   "author": "",
