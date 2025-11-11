@@ -9,7 +9,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 // === Serve il frontend ===
-app.use(express.static(path.join(__dirname, "public"))); 
+app.use(express.static(path.join(__dirname, "dist")));
+
 // 👆 Mostra index.html e i file statici dalla cartella "public"
 
 // === Backend con JSON Server ===
