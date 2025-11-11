@@ -4,10 +4,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel public/index.html",
-    "build": "parcel build public/index.html",
-    "start": "node server.js"
-  },
+  "dev": "parcel public/index.html",
+  "build": "parcel build public/index.html --dist-dir dist",
+  "start": "node server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
