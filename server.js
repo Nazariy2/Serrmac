@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // 👆 Mostra index.html e i file statici dalla cartella "public"
 
 // === Backend con JSON Server ===
-const router = jsonServer.router("src/db.json");
+const router = jsonServer.router("public/src/db.json");
 const middlewares = jsonServer.defaults();
 
 app.use("/api", middlewares, router);
