@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
   "dev": "parcel public/index.html",
-  "build": "parcel build public/index.html --dist-dir dist",
+  "build": "parcel build public/index.html --out-dir dist",
   "start": "node server.js"
 },
   "keywords": [],
